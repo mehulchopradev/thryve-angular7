@@ -1,0 +1,18 @@
+<div class="booklist">
+  <table border="1">
+      <thead>
+          <tr>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Pages</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let book of bookList">
+              <td>{{ book.title }}</td>
+              <td>{{ book.price }}</td>
+              <td>{{ book.pages }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

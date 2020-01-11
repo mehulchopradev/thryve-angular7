@@ -1,21 +1,24 @@
 <div>
-  <input type="text" placeholder="Enter 1st No">
-  <select>
+  <input type="text" placeholder="Enter 1st No" [ngModel]="first" (ngModelChange)="onFirstChange($event)">
+  <select [(ngModel)]="ops">
       <option>+</option>
       <option>-</option>
       <option>*</option>
   </select>
-  <input type="text" placeholder="Enter 2nd No">
+  <input type="text" placeholder="Enter 2nd No" [ngModel]="second" (ngModelChange)="onSecondChange($event)">
 </div>
 <div>
   <input type="button"
-      value="Calculate">
+      value="Calculate"
+      (click)="onCalculate()"
+      [disabled]="calcDisabled"
+  >
 </div>
 <div>
-  <input type="text">
+  <input type="text" [value]="ans">
 </div>
-<div>
-  First No is<br>
-  Second No is<br>
-  Ans is
-</div>
+<app-calc-results
+  [firstNo]="first"
+  [secondNo]="second"
+  [ans]="ans"
+  [ansCalculated]="ansCalculated"></app-calc-results>

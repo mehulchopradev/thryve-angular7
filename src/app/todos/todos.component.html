@@ -1,0 +1,15 @@
+<div>
+  <div class="editor">
+    <input type="text" placeholder="Write ur todo" [(ngModel)]="newTodo">
+    <button (click)="onSave()" [disabled]="!newTodo">Save</button>
+  </div>
+  <div class="todolist">
+    <div *ngFor="let todo of todoList">
+      <input type="checkbox" [(ngModel)]="todo.done">{{ todo.description | title }}
+        ({{ todo.date | date: 'dd-MM-yyyy' }})
+    </div>
+  </div>
+  <div class="todosfooter">
+    <button (click)="onClearCompleted()" [disabled]="shouldDisableClear()">Clear Completed</button>
+  </div>
+</div>

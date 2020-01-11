@@ -1,0 +1,9 @@
+<div>
+  <app-book-list [newBook]="newBook"></app-book-list>
+  <div class="bookeditor">
+      <div class="action">
+          <button (click)="addBook()">Add Book</button>
+      </div>
+      <app-book-form (onNewBook)="onNewBook($event)" *ngIf="showBookForm"></app-book-form>
+  </div>
+</div>
